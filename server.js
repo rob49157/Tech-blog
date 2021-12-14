@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const bodyparser = require("body-parser");
@@ -46,3 +47,17 @@ sequelize.sync({ force: false }).then(() => {
     console.log("Server listening on: http://localhost:" + PORT)
   );
 });
+=======
+const express= require('express')           
+const PORT= 3000
+const app= express  
+
+
+
+app.get('/',function(req,res){
+    res.send('hello world')
+})
+
+app.listen(PORT, function() {
+    console.log(`Example app listening on port ${port}!`)})
+>>>>>>> 7f23e23e9d5b300a65b97bf69d6ce8c988736439
