@@ -1,15 +1,13 @@
 const router = require("express").Router();
 const { Model } = require("sequelize");
-const { Coin, User } = require("../models");
+const { User } = require("../models");
 const withAuth = require("../utility/auth");
 
 router.get("/", async (req, res) => {
   res.render("homepage", { loggedIn: req.session.loggedIn });
 });
 
-router.get("/search", async (req, res) => {
-  res.render("searchcrypto", { loggedIn: req.session.loggedIn });
-});
+
 
 
 router.get("/dashboard", withAuth, async (req, res) => {
