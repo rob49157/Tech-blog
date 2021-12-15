@@ -3,9 +3,10 @@ const { Model } = require("sequelize");
 const { User } = require("../models");
 const withAuth = require("../utility/auth");
 
-router.get("/", async (req, res) => {
+ router.get("/", async (req, res) => {
+   
   res.render("homepage", { loggedIn: req.session.loggedIn });
-});
+ });
 
 
 
