@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Note } = require("../../models");
-
+const get= require("../../views/dashboard")
 const submit= document.getElementById("submit")
 const update= document.getElementById("update")
 const erase= document.getElementById("delete")
@@ -8,7 +8,7 @@ const erase= document.getElementById("delete")
 
 router.get('/', async (req, res) => {
     console.log('asdfasdfasdf')
-    const categories = await Note.findAll({
+    get = await Note.findAll({
      
       
     })
