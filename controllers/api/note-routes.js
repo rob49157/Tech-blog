@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const { Note } = require("../../models");
 
+const submit= document.getElementById("submit")
+const update= document.getElementById("update")
+const erase= document.getElementById("delete")
 
 
 router.get('/', async (req, res) => {
@@ -30,18 +33,18 @@ router.get('/', async (req, res) => {
   
   router.post('/',  async (req, res) => {
       try {
-        const categories = await Note.create(req.body);
-        res.status(200).json(categories);
+       submit = await Note.create(req.body);
+        res.status(200).json(submit);
       } catch (err) {
         res.status(400).json(err)
       }
-      return res.render("notes")
+      return res.render("homepage")
      
    });
    
    // update a category by its `id` value
    router.put('/:id', async (req, res) => {
-     const categories=  await Note.update({
+     update=  await Note.update({
       category_name: req.body.category_name
      },
      { where:{
@@ -49,17 +52,17 @@ router.get('/', async (req, res) => {
      }
   
      })
-     return res.render("notes")
+     return res.render("homepage")
    })
     
   // delete a category by its `id` value
   router.delete('/:id', (req, res) => {
-    const categories= Note.destroy({
+    erase= Note.destroy({
       where: {
         id: req.params.id
       },
     })
-      return res.render("notes")
+      return res.render("homepage")
   });
 
 
