@@ -47,7 +47,7 @@
                 class="dropdown-menu dropdown-menu-dark"
                 aria-labelledby="navbarDarkDropdownMenuLink"
               >
-                <li><a class="dropdown-item" href="/dashboard" style= "font-family: 'Bakbak One', cursive;">Notes</a></li>
+               
                 
                 <li><a
                     class="dropdown-item"
@@ -64,6 +64,22 @@
     <header>
       {{! <h1>Welcome to Crypto World</h1> }}
     </header>
+
+    {{!-- //BLOG --}}
+  <form>
+  <div id ='NOTES'></div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Blog</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Blog title">
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Blog content</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <input type="submit" form="id_of_the_form" value="Submit">  
+  </div>
+</form>
+
     <nav>
 
       <!-- If the user is logged in, show a logout button -->

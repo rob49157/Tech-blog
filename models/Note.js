@@ -1,8 +1,11 @@
-const { Model, DataType}= require("sequelize")
-const sequalize = require("../config/connection")
 
-class Note extends model{}
+const { Model, DataTypes}= require("sequelize")
+const sequelize = require("../config/connection")
 
+class Note extends Model{}
+
+
+//TABLE
 Note.init(
     {
       id: {
@@ -11,7 +14,7 @@ Note.init(
         autoIncrement: true,
         allowNull: false,
       },
-      name: {
+      title: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -26,7 +29,7 @@ Note.init(
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: "coin",
+      modelName: "Note",
     }
   );
   
