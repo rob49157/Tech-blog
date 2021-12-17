@@ -19,7 +19,7 @@ Note.init(
         allowNull: false,
       },
       
-      definition: {
+      notes: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
