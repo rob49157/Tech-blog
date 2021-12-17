@@ -1,11 +1,12 @@
-
+// post
 const techblogform = async (event) => {
     event.preventDefault();
   
     const postnotes = document.querySelector("form-control").value.trim();
-    document.getElementById("submit").addEventListener("submit", techblogform);
+    const title = document.getElementById("blogtitle")
+    const notes =document.getElementById("blogcontent")
     
-  // post
+    console.log(title, notes)
     if (postnotes ) {
       const response = await fetch("/api/notes", {
         method: "POST",
@@ -15,7 +16,7 @@ const techblogform = async (event) => {
      
   
       if (response.ok) {
-        document.location.replace("/dashboard");
+        document.location.replace("/");
        
       } else {
         alert("Failed submit form");
@@ -23,7 +24,7 @@ const techblogform = async (event) => {
     }
   };
 // update
-  const updateform = async (event) => {
+const updateform = async (event) => {
     event.preventDefault();
   
     const postnotes = document.querySelector("form-control").value.trim();
@@ -38,7 +39,7 @@ const techblogform = async (event) => {
      
   
       if (response.ok) {
-        document.location.replace("/dashboard");
+        document.location.replace("/");
       } else {
         alert("Failed submit form");
       }
@@ -48,7 +49,7 @@ const techblogform = async (event) => {
 
   // delete
 
-  const deleteform = async (event) => {
+const deleteform = async (event) => {
     event.preventDefault();
   
     const postnotes = document.querySelector("form-control").value.trim();

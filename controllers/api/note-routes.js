@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
     } 
     
   );
-  
+  // create nww post
   router.post('/',  async (req, res) => {
       try {
        submit = await Note.create(req.body);
@@ -42,7 +42,7 @@ router.get('/', async (req, res) => {
      
    });
    
-   // update a category by its `id` value
+   // update post by its `id` value
    router.put('/:id', async (req, res) => {
      update=  await Note.update({
       category_name: req.body.category_name
@@ -55,7 +55,7 @@ router.get('/', async (req, res) => {
      return res.render("homepage")
    })
     
-  // delete a category by its `id` value
+  // delete a post by its `id` value
   router.delete('/:id', (req, res) => {
     erase= Note.destroy({
       where: {
