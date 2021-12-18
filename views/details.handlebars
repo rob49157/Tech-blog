@@ -10,13 +10,12 @@
     <script>
         const trash= document.querySelector('a.delete')
         trash.addEventListener('click',(e)=>{
-            const endpoint=`/notes/${trash.dataset.doc}`
-
+            const endpoint=`api/notes/${trash.dataset.doc}`
             fetch(endpoint,{
                 method:'DELETE'
             })
             .then((response)=>response.json())
-            .then((data)=>console.log(data))
+            .then((data)=> window.location.href=data.redirect)
             .catch(err=> console.log(err))
         })
     </script>
