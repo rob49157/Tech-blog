@@ -1,20 +1,5 @@
- <form>
-  <div id ='NOTES'></div>
-  <div class="form-group">
-    <label id="blogtitle" for="exampleFormControlInput1">Blog</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Blog title">
-  </div>
-  
-  <div class="form-group">
-    <label id="blogcontent"for="exampleFormControlTextarea1">Blog content</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    <button type="submit" onclick= "techblogform()" id="input">Post</button>
-    <button type="submit" onclick= "deleteform()" id="erase">Delete</button>
-    <button type="submit" onclick= "updateform()" id="advancement">Update</button>
-    
-    
-      
-  </div>
-</form>
-
-<script src="./js/dashboard.js"></script>
+<h2>All Notes</h2>
+{{#each notes}}
+  <a href="/api/notes/{{this.dataValues.id}}">{{this.dataValues.title}}</a>
+  <p>{{this.dataValues.notes}}</p>
+{{/each}}

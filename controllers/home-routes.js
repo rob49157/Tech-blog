@@ -12,9 +12,14 @@ const withAuth = require("../utility/auth");
 
 
 router.get("/dashboard", withAuth, async (req, res) => {
-  res.render("dashboard", { loggedIn: req.session.loggedIn });
+  let notes = await Note.findAll({})
+  
+  res.render("dashboard", { loggedIn: req.session.loggedIn, notes: notes });
 });
 
+router.get("/create", withAuth, async (req, res) => {
+  res.render("create", { loggedIn: req.session.loggedIn });
+});
 
 /////////////
 
