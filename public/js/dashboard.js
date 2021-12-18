@@ -1,34 +1,45 @@
 // post
-const techblogform = async (event) => {
-    event.preventDefault();
+    const postnotes = document.querySelector(".form-control")
+    // const title = document.getElementById("blogtitle").value()
+    // const notes =document.getElementById("blogcontent").value()
+
+
+
+
+
+  const techblogform = async (event) => {
+   
+  // event.preventDefault();
+  const title = document.getElementById("exampleFormControlInput1").value
+  const notes =document.getElementById("exampleFormControlTextarea1").value
   
-    const postnotes = document.querySelector("form-control").value.trim();
-    const title = document.getElementById("blogtitle")
-    const notes =document.getElementById("blogcontent")
     
     console.log(title, notes)
+    
     if (postnotes ) {
-      const response = await fetch("/api/notes", {
+      const response = await fetch("/api/notes/post", {
+        
         method: "POST",
         body: JSON.stringify({ title, notes }),
         headers: { "Content-Type": "application/json" },
       });
+      console.log(response)
      
   
       if (response.ok) {
         document.location.replace("/");
        
       } else {
-        alert("Failed submit form");
+        alert("Failed to post blog");
       }
     }
   };
 // update
 const updateform = async (event) => {
-    event.preventDefault();
+    // event.preventDefault();
   
-    const postnotes = document.querySelector("form-control").value.trim();
-    document.getElementById("update").addEventListener("submit", updateform);
+    // const postnotes = document.querySelector("form-control").value.trim();
+    // document.getElementById("update").addEventListener("submit", updateform);
   
     if (postnotes ) {
       const response = await fetch("/api/notes", {
@@ -36,12 +47,13 @@ const updateform = async (event) => {
         body: JSON.stringify({ title, notes }),
         headers: { "Content-Type": "application/json" },
       });
+      console.log("response")
      
   
       if (response.ok) {
         document.location.replace("/");
       } else {
-        alert("Failed submit form");
+        alert("Failed to update blog");
       }
     }
   };
@@ -50,23 +62,23 @@ const updateform = async (event) => {
   // delete
 
 const deleteform = async (event) => {
-    event.preventDefault();
+    // event.preventDefault();
   
-    const postnotes = document.querySelector("form-control").value.trim();
-    document.getElementById("delete").addEventListener("submit", deleteform);
+   
   
-    if (postnotes ) {
+    if (postnotes ) { console.log('fasfdsadf')
       const response = await fetch("/api/notes", {
         method: "DELETE",
         body: JSON.stringify({ title, notes }),
         headers: { "Content-Type": "application/json" },
       });
+      console.log("delete")
      
   
       if (response.ok) {
         document.location.replace("/dashboard");
       } else {
-        alert("Failed submit form");
+        alert("Failed to delete form");
       }
     }
   };

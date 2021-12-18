@@ -7,13 +7,8 @@ const get= require("../../views/dashboard")
 
 
 router.get('/', async (req, res) => {
-    console.log('asdfasdfasdf')
-    get = await Note.findAll({
-     
-      
-    })
-    res.render("notes")
-    
+    notes = await Note.findAll({})
+    res.send(notes)
   });
   
   // find one category by its `id` value
@@ -30,17 +25,21 @@ router.get('/', async (req, res) => {
     } 
     
   );
-  // create nww post
-  router.post('/',  async (req, res) => {
+  // create new post
+  router.post('/post',  async (req, res) => {
       try {
+        console.log('alskdfj;alskdfj;laskdfj;laskdfj')
        submit = await Note.create(req.body);
         res.status(200).json(submit);
-      } catch (err) {
+      } 
+      catch (err) {
         res.status(400).json(err)
       }
       return res.render("homepage")
+      console.log('roberto')
      
    });
+   console.log('robero')
    
    // update post by its `id` value
    router.put('/:id', async (req, res) => {

@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Model } = require("sequelize");
-const { User } = require("../models");
+const { User, Note } = require("../models");
 const withAuth = require("../utility/auth");
 
  router.get("/", async (req, res) => {
@@ -17,16 +17,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
 
 /////////////
-//   console.log("dadasdasd");
-//   const coins = coindata.map((coinDefinitions) =>
-//     coinDefinitions.get({ plain: true })
-//   );
-//   res.render("APIDATA"),
-//     {
-//       coinDefinitions,
-//       loggedIn: req.session.loggedIn,
-//     };
-// });
+
 ////////
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {

@@ -29,7 +29,7 @@ Note.init(
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: "Note",
+      modelName: "note",
     }
   );
   
