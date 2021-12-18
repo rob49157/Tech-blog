@@ -38,8 +38,8 @@
 const updateform = async (event) => {
     // event.preventDefault();
   
-    // const postnotes = document.querySelector("form-control").value.trim();
-    // document.getElementById("update").addEventListener("submit", updateform);
+    const title = document.getElementById("exampleFormControlInput1").value
+    const notes =document.getElementById("exampleFormControlTextarea1").value
   
     if (postnotes ) {
       const response = await fetch("/api/notes", {
@@ -64,7 +64,8 @@ const updateform = async (event) => {
 const deleteform = async (event) => {
     // event.preventDefault();
   
-   
+    const title = document.getElementById("exampleFormControlInput1").value
+    const notes =document.getElementById("exampleFormControlTextarea1").value
   
     if (postnotes ) { console.log('fasfdsadf')
       const response = await fetch("/api/notes", {
