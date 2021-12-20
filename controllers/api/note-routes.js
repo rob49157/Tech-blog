@@ -53,16 +53,20 @@ router.get('/', async (req, res) => {
    })
     
   // delete a post by its `id` value
-  router.delete('api/notes/:id', (req, res) => {
-    const id= req.params.id
-    Note.findById(id)
-    .then(result=>{
-      res.json({redirect: '/notes'})
+  router.delete('/:id', async (req, res) => {
+    const id = await Note.destroy({
+      where:{
+        ID: req.params.id
+      }
+
     })
-    .catch(err =>{
+    .then(result =>{
+      res.json({redirect: 'api/notes'})
+    })
+    .catch(err=>{
       console.log(err)
     })
-    
+   
   })
 
  
