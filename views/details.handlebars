@@ -5,21 +5,21 @@
     <textarea class="form-control" id="notes" name="notes" rows="3" value="{{note.dataValues.notes}}"></textarea> 
     <button>Update</button>
     <div>
-        <button><a class="delete" data-doc="Note.:id">Delete</a></button>
+        <button><a class="delete" data-doc="{{note.dataValues.id}}">Delete</a></button>
     </div>
     <script>
         const trash= document.querySelector('a.delete')
-        console.log(trash)
+        console.log(trash.dataset.doc)
         trash.addEventListener('click',(e)=>{
             e.preventDefault()
-            console.log('roberto')
+            //console.log('roberto')
             const endpoint=`/api/notes/${trash.dataset.doc}`
+            console.log(endpoint)
             fetch(endpoint,{
                 method:'DELETE'
             })
-            .then((response)=>response.json())
-            .then((data)=> window.location.href=data.redirect)
+            .then((response)=> window.location.href = '/dashboard')
             .catch(err=> console.log(err))
-        console.log(endpoint)})
+            })
     </script>
 </form>

@@ -1,9 +1,7 @@
 const router = require('express').Router();
 const { Note } = require("../../models");
 const get= require("../../views/dashboard")
-// const submit= document.getElementById("submit")
-// const update= document.getElementById("update")
-// const erase= document.getElementById("delete")
+
 
 router.get('/', async (req, res) => {
     notes = await Note.findAll({})
@@ -61,7 +59,8 @@ router.get('/', async (req, res) => {
 
     })
     .then(result =>{
-      res.json({redirect: 'api/notes'})
+      console.log(result)
+      // res.redirect('/dashboard')
     })
     .catch(err=>{
       console.log(err)
