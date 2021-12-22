@@ -18,11 +18,17 @@
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
     "require": "^2.4.20",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "serve": "^13.0.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+  "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+"eject": "react-scripts eject",
+"heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
