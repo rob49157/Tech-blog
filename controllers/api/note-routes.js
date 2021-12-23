@@ -36,19 +36,7 @@ router.get('/', async (req, res) => {
         })     
    });
    
-   // update post by its `id` value
-   router.put('/:id', async (req, res) => {
-     console.log(req.body.id)
-    //  update=  await Note.update({
-    //   category_name: req.body.category_name
-    //  },
-    //  { where:{
-    //   id: req.params.id
-    //  }
-  
-    //  })
-    //  return res.render("homepage")
-   })
+ 
     
   // delete a post by its `id` value
   router.delete('/:id', async (req, res) => {

@@ -27,7 +27,7 @@ After the user has created the account, on the Navbar there are going to be the 
 
 - On the navbad, click on "Create" and youll be sent to the create page. on this page you can write your blog. when done, click submit to have blog posted. Once posted the user will be redirected to the dashboard page with the blog appearing there.
 
-- To delete the post, on the dashboard page, click on the title of the blog, and youll be redirected to notes. thereyou can click "delete" to delete the post. and you'll be send back to the dashboard. There is a slight delay with the route back to dashboard. i dont' know whats causing it.
+- To delete the post, on the dashboard page, click on the title of the blog, and youll be redirected to notes. thereyou can click "delete" to delete the post. and you'll be send back to the dashboard. There is a slight delay with the route back to dashboard. i dont' know whats causing it. if you dont feel like waiting, on the navbar click "dashboard' and it will redirect you to the update page.
 # Screenshots
 
 ![image](https://user-images.githubusercontent.com/88434699/147017698-4a12e701-fe86-48c1-99e6-2652d1ee9a56.png)

@@ -3,7 +3,7 @@
     <input type="text" class="form-control" id="title" name="title" value="{{note.dataValues.title}}"></input>
     <p for="text">Blog content</p>
     <textarea class="form-control" id="notes" name="notes" rows="3" value="{{note.dataValues.notes}}"></textarea> 
-    <button>Update</button>
+    <button><a class="update" data-doc="{{note.dataValues.id}}">Update</a></button>
     <div>
         <button><a class="delete" data-doc="{{note.dataValues.id}}">Delete</a></button>
     </div>
@@ -22,4 +22,5 @@
             .catch(err=> console.log(err))
             })
     </script>
+    
 </form>
